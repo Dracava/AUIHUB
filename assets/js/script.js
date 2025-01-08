@@ -142,53 +142,29 @@ async function sendMessage() {
   const userMessage = inputBox.value.trim();
   if (!userMessage) return;
 
-  // Add user message to chat
   appendMessage('You', userMessage);
   inputBox.value = '';
 
   try {
-    // Add console.log to debug the request
-    console.log('Sending request to OpenAI...');
-    
-    const response = await fetch('https://api.openai.com/v1/chat/completions', {
+    const response = await fetch('http://localhost:3000/api/chat', {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${process.env.OPENAI_API_KEY}`,
+        'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        model: 'gpt-3.5-turbo', 
-        messages: [
-          {
-            role: 'system',
-            content: 'You are an AI Design Companion, a UX/UI Design assistant specializing in interface development.'
-          },
-          {
-            role: 'user',
-            content: userMessage
-          }
-        ],
-        temperature: 0.7
-      }),
+        message: userMessage
+      })
     });
 
-    // Add response status check
     if (!response.ok) {
-      const errorData = await response.json();
-      throw new Error(`API Error: ${errorData.error?.message || 'Unknown error'}`);
+      throw new Error('Backend error');
     }
 
     const data = await response.json();
-    console.log('Response received:', data); // Debug response
-
-    if (data.choices && data.choices[0]) {
-      appendMessage('UI Companion', data.choices[0].message.content);
-    } else {
-      throw new Error('Invalid response format');
-    }
+    appendMessage('UI Companion', data.message);
   } catch (error) {
-    console.error('Detailed error:', error); // More detailed error logging
-    appendMessage('Error', `Could not get a response: ${error.message}`);
+    console.error('Error:', error);
+    appendMessage('Error', 'Could not get a response');
   }
 }
 

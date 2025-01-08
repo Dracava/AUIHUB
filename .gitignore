@@ -1,4 +1,13 @@
-.env
+# Dependencies
 node_modules/
-.DS_Store 
+package-lock.json
+
+# Environment variables
+.env
+.env.*
+
+# System files
+.DS_Store
+
+# Local config
 config.js
