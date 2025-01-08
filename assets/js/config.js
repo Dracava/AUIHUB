@@ -1,5 +1,5 @@
 const process = {
   env: {
-    OPENAI_API_KEY: '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' // Add your API key here for development
+    OPENAI_API_KEY: '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'
   }
 }; 
