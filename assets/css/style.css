@@ -141,10 +141,6 @@ html { font-family: var(--ff-poppins); }
 
 body { background: var(--smoky-black);}
 
-
-
-
-
 /*-----------------------------------*\
   #REUSED STYLE
 \*-----------------------------------*/
@@ -276,16 +272,12 @@ article.active {
   z-index: -1;
 }
 
-
-
-
-
 /*-----------------------------------*\
   #MAIN
 \*-----------------------------------*/
 
 main {
-  margin: 0 12px; /* Changed from margin: 15px 12px */
+  margin: 0 12px;
   min-height: 100%;
   padding: 0px;
   min-width: 259px;
@@ -295,20 +287,16 @@ main {
 
 @media (max-width: 1024px) {
   main {
-    padding-top: 60px; /* Adjust if needed based on navbar height */
+    padding-top: 60px;
   }
 }
 
 @media (min-width: 1024px) {
   main {
-    margin-top: 60px; /* Keep original margin for desktop */
+    margin-top: 60px;
     margin-bottom: 100px;
   }
 }
-
-
-
-
 
 /*-----------------------------------*\
   #SIDEBAR
@@ -327,9 +315,9 @@ main {
   position: relative;.hero-title {
   color: var(--light-gray);
   font-size: var(--fs-1);
-  font-weight: var(--fw-300);  /* Changed to lighter weight */
+  font-weight: var(--fw-300);
   margin-bottom: 15px;
-  letter-spacing: 1px;  /* Added for better readability */
+  letter-spacing: 1px; 
 }
 
 .hero-tagline {
@@ -489,10 +477,6 @@ main {
 
 .navbar-link.active { color: var(--main-purple); }
 
-
-
-
-
 /*-----------------------------------*\
   #ABOUT
 \*-----------------------------------*/
@@ -508,6 +492,13 @@ main {
 }
 
 .info-text p { margin-bottom: 15px; }
+
+.info-text .bullet-list {
+  list-style-type: disc !important;
+  padding-left: 2em;
+  margin: 1em 0;
+  color: var(--light-gray);
+}
 
 
 
@@ -940,15 +931,21 @@ main {
   line-height: 1.6;
 }
 
-
-
-
+.home-text img {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  display: block;
+  object-fit: cover;
+  border-radius: 12px;
+  margin: 0 auto;
+}
 
 /*-----------------------------------*\
-  #KEYWORDS
+  #PROMPTS
 \*-----------------------------------*/
 
-.keywords-categories {
+.prompts-categories {
   padding: 20px;
 }
 
@@ -963,7 +960,7 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 20px;
+  padding: 15px 35px;
   cursor: pointer;
   color: var(--white-2);
   font-size: var(--fs-6);
@@ -984,7 +981,7 @@ main {
 
 .category-items {
   display: block;
-  padding: 0 20px;
+  padding: 0 35px;
   background: var(--eerie-black-2);
   max-height: 0;
   overflow: hidden;
@@ -993,7 +990,7 @@ main {
 
 .category-dropdown.active .category-items {
   max-height: 500px;
-  padding: 10px 20px;
+  padding: 10px 35px;
 }
 
 .category-header::after {
@@ -1023,7 +1020,7 @@ main {
 
 .category-dropdown.active .category-header {
   background: var(--onyx);
-  color: var(--main-purple);
+  color: var(--light-purple);
 }
 
 
@@ -1178,8 +1175,7 @@ main {
 
   .navbar-list { gap: 20px; }
 
-  .navbar-link { --fs-8: 14px; }
-
+  .navbar-link { --fs-8: 16px; }
 
 
   /**
@@ -1415,8 +1411,6 @@ main {
 }
 
 
-
-
 /**
  * responsive larger than 1250px screen
  */
@@ -1536,10 +1530,9 @@ main {
   .info-text-container {
     flex-direction: column;
   }
-  
 }
 
-.keywords-categories {
+.prompts-categories {
   padding: 20px;
 }
 
@@ -1554,7 +1547,7 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 20px;
+  padding: 15px 35px;
   cursor: pointer;
   color: var(--white-2);
   font-size: var(--fs-6);
@@ -1574,7 +1567,7 @@ main {
 
 .category-items {
   display: block;
-  padding: 0 20px;
+  padding: 0 35px;
   background: var(--eerie-black-2);
   max-height: 0;
   overflow: hidden;
@@ -1583,7 +1576,7 @@ main {
 
 .category-dropdown.active .category-items {
   max-height: 500px;
-  padding: 10px 20px;
+  padding: 10px 35px;
 }
 
 .item {
@@ -1604,26 +1597,29 @@ main {
 
 .category-dropdown.active .category-header {
   background: var(--onyx);
-  color: var(--main-purple);
+  color: var(--light-purple);
 }
 
 /*-----------------------------------*\
   #MEDIA QUERIES
 \*-----------------------------------*/
 
-/* Mobile (<450px) */
 @media (max-width: 450px) {
-  /* Mobile styles */
+    .sidebar {
+      margin-top: 12px;
+  }
 }
 
-/* Tablet (450px - 768px) */
 @media (min-width: 450px) and (max-width: 768px) {
-  /* Tablet styles */
+  .sidebar {
+    margin-top: 12px;
+}
 }
 
-/* Desktop (>768px) */
-@media (min-width: 768px) {
-  /* Desktop styles */
+@media (min-width: 768px) and (max-width: 1200px) {
+  .sidebar {
+    margin-top: 40px;
+}
 }
 
 /* Main category styling */
@@ -1632,6 +1628,7 @@ main {
   border-radius: 8px;
   margin-bottom: 15px;
   overflow: hidden;
+  outline: 1px solid var(--jet);
 }
 
 .main-category-header {
@@ -1665,7 +1662,7 @@ main {
 
 .main-category-dropdown.active .main-category-header {
   background: var(--onyx);
-  color: var(--main-purple);
+  color: var(--light-purple);
 }
 
 /* Adjust existing category dropdowns when inside main category */
@@ -1675,4 +1672,192 @@ main {
 
 .main-category-items .category-dropdown:last-child {
   margin-bottom: 0;
+}
+
+/* Chat interface styling */
+.chat-container {
+  width: 100%;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+/* Add search styles */
+.search-container {
+  position: relative;
+  margin: 0 20px 20px;
+}
+
+#prompt-search {
+  width: 100%;
+  padding: 12px 40px 12px 15px;
+  border: 1px solid var(--jet);
+  border-radius: 8px;
+  background: var(--eerie-black-1);
+  color: var(--white-2);
+  font-size: var(--fs-6);
+}
+
+#prompt-search:focus {
+  outline: none;
+  border-color: var(--light-purple);
+}
+
+.search-icon {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--light-gray);
+}
+
+/* Add highlight class for search results */
+.item.highlight {
+  color: var(--light-purple);
+  font-weight: 500;
+}
+
+/* Add no-results message styling */
+.no-results {
+  padding: 20px;
+  text-align: center;
+  color: var(--light-gray);
+  display: none;
+}
+
+.no-results.show {
+  display: block;
+}
+
+.category-header span.highlight,
+.main-category-header span.highlight {
+  color: var(--light-purple);
+  font-weight: 500;
+}
+
+/* Prompt Overlay Styles */
+.prompt-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+  backdrop-filter: blur(3px);
+  overflow: hidden; 
+}
+
+body.overlay-active {
+  overflow: hidden;
+  height: 100vh;
+  position: fixed;
+  width: 100%; 
+}
+
+.prompt-popup {
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--eerie-black-2);
+  border: 1px solid var(--jet);
+  border-radius: 14px;
+  padding: 25px;
+  width: 90%;
+  max-width: 700px;
+  max-height: 90vh; 
+  overflow-y: auto; 
+  box-shadow: var(--shadow-4);
+}
+
+.prompt-content {
+  color: var(--light-gray);
+  font-size: var(--fs-6);
+  line-height: 1.6;
+  font-weight: var(--fw-100);
+}
+
+.prompt-title {
+  color: var(--light-gray);
+  font-size: var(--fs-3);
+  margin-bottom: 15px;
+  font-weight: var(--fw-500);
+}
+
+.close-prompt {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  color: var(--light-gray);
+  font-size: 24px;
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 4px;
+}
+
+.close-prompt:hover {
+  color: var(--main-purple);
+  background: var(--onyx);
+}
+
+/* Animation for popup */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.prompt-overlay.active {
+  display: block;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Add styles for the copy button */
+.copy-prompt {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 20px;
+  padding: 8px 16px;
+  background: var(--main-purple);
+  color: var(--white-1);
+  border-radius: 8px;
+  font-size: var(--fs-6);
+  transition: var(--transition-1);
+}
+
+.copy-prompt:hover {
+  background: var(--dark-purple);
+}
+
+.copy-prompt .copied-text {
+  display: none;
+}
+
+.copy-prompt.copied .copy-text {
+  display: none;
+}
+
+.copy-prompt.copied .copied-text {
+  display: inline;
+}
+
+.bullet-list {
+  list-style-type: disc;
+  padding-left: 2em;
+  margin: 1em 0;
+  color: var(--light-gray);
+}
+
+.bullet-list li {
+  margin-bottom: 0.5em;
+  position: relative;
+}
+
+.bullet-list li::before {
+  content: "•";
+  color: var(--light-gray);
+  position: absolute;
+  left: -1em;
 }
