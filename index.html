@@ -157,11 +157,28 @@
           <h2 class="h2 article-title">UI Bot</h2>
         </header>
         <section class="chat-container">
-          <div id="chat-box">Welcome to UI Companion!</div>
+          <!-- Remove existing chat elements -->
+          <!-- <div id="chat-box">Welcome to UI Companion!</div>
           <div class="input-container">
             <textarea id="input-box" placeholder="Type your message..."></textarea>
+            <input type="file" id="file-input" multiple />
             <button id="send-btn">Send</button>
-          </div>
+          </div> -->
+
+          <!-- Add the embedded bot -->
+          <script>
+            window.PICKAXE = window.PICKAXE || { pickaxes: [], style: "kHsjoCQGgI0GWASmgIdIAxiDA6wgM6CMbgC4UgDDAXYEAvDIBoGEBgG4CAWQIGYBgwCqApdoEjggjIaCcCoCA9gVAaAnBYBkqgBkKBwWoARYgJhrAFwqAFQEAHkIAXAQAASgbCfAhqSAAAsDEAYEc+QJckgGXFAhUGBQ30DEcIGo0wBBdgS5VAcAaATm8A1GoCpYQJQmgEVZAAMiAgMEBC9oAkuQAoiAdkCKaoARDoAJFYA0sIBYQoAiDIAACIAISgD6gHpAAPCAGEiAER2ACSCAaSaAISoAboBBLoA5NIAlPYBOsIBBSYBCFoAQfIAldICDKQBqgDNsgDs3gHk/gAl9gDgYgIBJgImFgI1fgJIjgHExgHebgEt7gFWjgKtSgF2HgGVhgLkTgHWZgKFDgCovgKRMgEgNgBQMgNtOgADPgIrigOIygC5YgABEgAWwgAuggIxEgAYwgEICgLAogI8ggBQCgFiugDhUQAJ8IBKQEAGoKAADFAGUggBC6QAABoAFCkAZw2AQhcAKCAAgvAAzAgDhRQA0JoAYXEAkMSAYmBABKKgDUYQCY7IByE8AksiAQZRAAGQgAmwQCGjoAUhUAJDaAbilAJOCgCODQA8j4BBJMAmTCACHkABqACsvAGwMgEiwQAm1IBTAMAd06ARkVAGBKgGgVQDhoYA0E0AoaCAYoDAALCgHh7QACfYAqMEA7teAQgzABgoAAhAPHygAZEgCZgEDgQC28YAYMsAhDeADQFACQwgAsGQD4DIBFBkAmjUAFUAq9iAS9DAL2EAEFAAGOgCgDQD1VIAExkALAOAaX1AFu1gDo7wAqaYBte8AJjmAaD5AGXwgDUKQBKIoBWpEAXDqAFYNAFxMgCRiwD4vIAaScAPBaARjVAATwgCJhQCt1oBAT8AYNOAAYFAKBEWkAG36AViNALGYgAgdQAvkoBfKEAOXGAO5nAKQCgH2mwCghYAuF0AEIKAAAnALGsgHmsQAEVoAjYEAp0CAGrPAHNUwBcKEAFwrADAhQAFcEAfRPAACCwA/DEAbIVAGCLwBwqsAQdBABlGQBabsAZnnAAEUAAAIA===" };
+            window.PICKAXE.pickaxes.push({ id: "A_UI_Bot_H9N2R", type: "inline" });
+            const { id: _fid } = window.PICKAXE.pickaxes[0];
+            fetch(`https://embed.pickaxeproject.com/axe/api/script/${_fid}`).then((e => e.json())).then((({ v: e }) => {
+              const t = `https://cdn.jsdelivr.net/gh/pickaxeproject/cdn@${e}/dist`;
+              if (!document.querySelector(`script[src="${t}/bundle.js"]`)) {
+                const e = document.createElement("script");
+                e.src = t + "/bundle.js", e.defer = !0, document.head.appendChild(e)
+              }
+            }));
+          </script>
+          <div id="pickaxe-inline-A_UI_Bot_H9N2R"></div>
         </section>
       </article>
 
