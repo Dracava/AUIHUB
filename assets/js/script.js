@@ -985,3 +985,20 @@ copyButton.addEventListener('click', () => {
     console.error('Failed to copy text: ', err);
   });
 });
+
+// Info section filter functionality
+const infoFilterBtns = document.querySelectorAll("[data-info-filter-btn]");
+const infoContents = document.querySelectorAll("[data-info-content]");
+
+let lastClickedInfoBtn = infoFilterBtns[0];
+
+infoFilterBtns.forEach((btn, index) => {
+  btn.addEventListener("click", function () {
+    lastClickedInfoBtn.classList.remove("active");
+    this.classList.add("active");
+    lastClickedInfoBtn = this;
+
+    infoContents.forEach(content => content.classList.remove("active"));
+    infoContents[index].classList.add("active");
+  });
+});

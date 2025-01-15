@@ -103,7 +103,6 @@
         </ul>
       </nav>
 
-
       <!-- #Prompts -->
 
       <article class="prompts active" data-page="prompts">
@@ -487,11 +486,33 @@
           <h2 class="h2 article-title">Info</h2>
         </header>
 
+        <!-- Add filter buttons -->
+        <ul class="filter-list">
+          <li class="filter-item">
+            <button class="active" data-info-filter-btn>About</button>
+          </li>
+          <li class="filter-item">
+            <button data-info-filter-btn>Prompting tips</button>
+          </li>
+          <li class="filter-item">
+            <button data-info-filter-btn>UX of AI</button>
+          </li>
+        </ul>
+
         <section class="info-text-container">
-          <div class="info-text">
-            <h2>
-              Remember: When working with the AI, focus questions on:
-            </h2>
+          <!-- Filter 1 content -->
+          <div class="info-text active" data-info-content="filter1">
+            <h3>In this hub you can:</h3>
+            <ul class="bullet-list">
+              <li>Search through keywords and find prompting suggestions</li>
+              <li>Chat with a specificallt trained AI Design assistant</li>
+              <li>Find external AI tools</li>
+            </ul>
+          </div>
+
+          <!-- Filter 2 content -->
+          <div class="info-text" data-info-content="filter2">
+            <h3>When working with the AI, focus questions on:</h3>
             <ul class="bullet-list">
               <li>Content organization and structure</li>
               <li>User experience principles</li>
@@ -501,20 +522,41 @@
               <li>User behavior and expectations</li>
               <li>Implementation considerations</li>
               <li>Written content and messaging</li>
+              <br>
+              <h3>Instead of asking the AI to "design" something, ask it to:</h3>
+              <ul class="bullet-list">
+                <li>Analyze requirements</li>
+                <li>Explain relationships</li>
+                <li>Describe behaviors</li>
+                <li>Recommend approaches</li>
+                <li>Break down complex features</li>
+                <li>Suggest improvements</li>
+                <li>Provide implementation guidance</li>
+                <li>Explain best practices</li>
+              </ul>
             </ul>
-            <br>
-            <h2>
-              Instead of asking the AI to "design" something, ask it to:
-            </h2>
+          </div>
+
+          <!-- Filter 3 content: UX of AI -->
+          <div class="info-text" data-info-content="filter3">
+            <h3>Core Principles of AI UX Design</h3>
             <ul class="bullet-list">
-              <li>Analyze requirements</li>
-              <li>Explain relationships</li>
-              <li>Describe behaviors</li>
-              <li>Recommend approaches</li>
-              <li>Break down complex features</li>
-              <li>Suggest improvements</li>
-              <li>Provide implementation guidance</li>
-              <li>Explain best practices</li>
+              <li>Start with the user - Let user experience guide technology choices</li>
+              <li>Set the right expectations - Explain capabilities and limitations clearly</li>
+              <li>Explain the results - Make AI decisions traceable and understandable</li>
+              <li>Communicate confidence - Indicate result quality and certainty levels</li>
+              <li>Degrade gracefully - Design for varying levels of confidence</li>
+              <li>Know what not to automate - Identify tasks better suited for humans</li>
+              <li>Keep the user in control - Augment rather than replace human abilities</li>
+              <li>Build trust over time - Start with suggestions before automation</li>
+              <li>Help users grow - Allow AI to adapt to changing user needs</li>
+              <li>Balance predictability and discovery - Avoid reinforcing biases</li>
+              <li>Avoid artificial personality - Stay consistent with product branding</li>
+              <li>Use chatbots sparingly - Consider simpler interfaces when appropriate</li>
+              <li>Prototype with real data - Test assumptions with actual user data</li>
+              <li>Work collaboratively - Include diverse perspectives in AI development</li>
+              <li>Be transparent - Share your process and data handling practices</li>
+              <li>Respect user privacy - Minimize data collection, maximize user control</li>
             </ul>
           </div>
         </section>

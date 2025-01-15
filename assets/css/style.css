@@ -1622,7 +1622,6 @@ main {
 }
 }
 
-/* Main category styling */
 .main-category-dropdown {
   background: var(--eerie-black-2);
   border-radius: 8px;
@@ -1665,7 +1664,6 @@ main {
   color: var(--light-purple);
 }
 
-/* Adjust existing category dropdowns when inside main category */
 .main-category-items .category-dropdown {
   margin-bottom: 8px;
 }
@@ -1674,14 +1672,12 @@ main {
   margin-bottom: 0;
 }
 
-/* Chat interface styling */
 .chat-container {
   width: 100%;
   padding: 0 20px;
   box-sizing: border-box;
 }
 
-/* Add search styles */
 .search-container {
   position: relative;
   margin: 0 20px 20px;
@@ -1735,7 +1731,6 @@ main {
   font-weight: 500;
 }
 
-/* Prompt Overlay Styles */
 .prompt-overlay {
   display: none;
   position: fixed;
@@ -1772,7 +1767,7 @@ body.overlay-active {
   box-shadow: var(--shadow-4);
 }
 
-.prompt-content {
+.prompt-text {
   color: var(--light-gray);
   font-size: var(--fs-6);
   line-height: 1.6;
@@ -1785,6 +1780,8 @@ body.overlay-active {
   margin-bottom: 15px;
   font-weight: var(--fw-500);
 }
+
+
 
 .close-prompt {
   position: absolute;
@@ -1852,7 +1849,7 @@ body.overlay-active {
 }
 
 .bullet-list li {
-  margin-bottom: 0.5em;
+  margin-bottom: 0.3em;
   position: relative;
 }
 
@@ -1861,4 +1858,34 @@ body.overlay-active {
   color: var(--light-gray);
   position: absolute;
   left: -1em;
+}
+
+/* Info section filters */
+.info .filter-list {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 30px;
+  padding: 0 20px;
+}
+
+.info .filter-item button {
+  color: var(--light-gray);
+  font-size: var(--fs-5);
+  transition: var(--transition-1);
+  padding: 5px 15px;
+  border-radius: 8px;
+}
+
+.info .filter-item button:hover,
+.info .filter-item button.active {
+  color: var(--main-purple);
+  background: var(--jet);
+}
+
+.info-text {
+  display: none;
+}
+
+.info-text.active {
+  display: block;
 }
