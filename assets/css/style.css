@@ -1175,7 +1175,7 @@ main {
 
   .navbar-list { gap: 20px; }
 
-  .navbar-link { --fs-8: 16px; }
+  .navbar-link { --fs-8: 14px; }
 
 
   /**
@@ -1712,7 +1712,8 @@ main {
 
 /* Add highlight class for search results */
 .item.highlight {
-  color: var(--light-purple);
+  color: var(--main-purple);
+  
   font-weight: 500;
 }
 
